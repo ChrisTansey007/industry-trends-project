@@ -3,6 +3,7 @@ import './index.css';
 import MarketGrowth from './components/MarketGrowth';
 import Competencies from './components/Competencies';
 import TechStack from './components/TechStack';
+import Challenges from './components/Challenges';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <MarketGrowth />
       <Competencies />
       <TechStack />
+      <Challenges />
     </div>
   );
 }
