@@ -19,6 +19,19 @@ This project is now a React application served by a small Express server. The Re
 
 The Express server serves the production build from `client/build`.
 
+## Development Mode
+
+If you want to work on the React application without creating a production
+build, you can run the development server directly:
+
+```bash
+npm start --prefix client
+```
+
+This command starts the Create React App development server at
+[http://localhost:3000](http://localhost:3000) and automatically reloads the
+page when you save changes.
+
 ## Verifying the Server
 
 After running `npm start`, you can confirm the server is serving the app by visiting `http://localhost:3000` or using `curl`:
