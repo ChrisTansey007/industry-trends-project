@@ -551,6 +551,36 @@
             <li><strong>Local vs. Cloud Deployment 💻☁️:</strong> Run locally for quick tests. For >10M vectors, switch to hosted service for auto-sharding/redundancy.</li>
             <li><strong>Embedding Normalization 📏:</strong> Normalize embeddings (`embedding / ||embedding||`) before insert (L2 recommended) for ~7% faster similarity calculations.</li>
         </ul>
+        <h4 class="font-bold mt-4 mb-3 text-lg tool-title">Weaviate</h4>
+        <p class="text-sm text-gray-600 mb-1">Key Features (2025):</p>
+        <ul class="list-disc list-inside space-y-2 text-sm md:text-base pl-4 pb-3">
+            <li><strong>AI-Native Schema & GraphQL:</strong> Define class schemas and query via GraphQL with vector search built in. <span class="citation">(weaviate.io)</span></li>
+            <li><strong>Hybrid Search & Modular Vectorizers:</strong> Combine keyword and vector search, with built-in modules for OpenAI, Cohere, and more. <span class="citation">(datacamp.com)</span></li>
+        </ul>
+        <h5 class="font-semibold mt-2 mb-1 text-base prompt-eng-title">Prompt-Engineering Best Practices (Weaviate):</h5>
+        <ul class="list-disc list-inside space-y-1 text-sm md:text-base pl-4 pb-3">
+            <li><strong>GraphQL Filters for RAG:</strong> Use `nearText` with filters to narrow search scope before vector similarity.</li>
+        </ul>
+        <h4 class="font-bold mt-4 mb-3 text-lg tool-title">Milvus</h4>
+        <p class="text-sm text-gray-600 mb-1">Key Features (2025):</p>
+        <ul class="list-disc list-inside space-y-2 text-sm md:text-base pl-4 pb-3">
+            <li><strong>Open-Source & Distributed:</strong> Supports HNSW and IVF indexes, GPU acceleration via NVIDIA RAFT. <span class="citation">(en.wikipedia.org)</span></li>
+            <li><strong>Streaming Data Ingestion:</strong> Real-time updates with separation of compute and storage.</li>
+        </ul>
+        <h5 class="font-semibold mt-2 mb-1 text-base prompt-eng-title">Prompt-Engineering Best Practices (Milvus):</h5>
+        <ul class="list-disc list-inside space-y-1 text-sm md:text-base pl-4 pb-3">
+            <li><strong>Partition-Oriented Shards:</strong> Shard collections by field or range for faster queries.</li>
+        </ul>
+        <h4 class="font-bold mt-4 mb-3 text-lg tool-title">Qdrant</h4>
+        <p class="text-sm text-gray-600 mb-1">Key Features (2025):</p>
+        <ul class="list-disc list-inside space-y-2 text-sm md:text-base pl-4 pb-3">
+            <li><strong>Rust-Powered Performance:</strong> Custom HNSW implementation with <20ms p95 latency. <span class="citation">(qdrant.tech)</span></li>
+            <li><strong>Hybrid Filters & Payload Queries:</strong> Combine metadata filters with vector similarity.</li>
+        </ul>
+        <h5 class="font-semibold mt-2 mb-1 text-base prompt-eng-title">Prompt-Engineering Best Practices (Qdrant):</h5>
+        <ul class="list-disc list-inside space-y-1 text-sm md:text-base pl-4 pb-3">
+            <li><strong>Compression & Quantization:</strong> Use built-in compression to reduce memory footprint for large collections.</li>
+        </ul>
     </div>
     <div id="modal-tech-orchestration-content" class="hidden">
         <h4 class="font-bold mt-4 mb-3 text-lg tool-title">LangChain</h4>
@@ -579,6 +609,17 @@
             <li><strong>Agentic Workflow Design 🤖:</strong> For complex tasks (Research -> Draft -> Review), assign separate agent nodes (ResearchAgent, DraftAgent), each can use different models.</li>
             <li><strong>Error Handling and Fallbacks ⚠️:</strong> Insert "Check" nodes after critical steps. If ResearchAgent has low confidence, route to backup agent instead of failing. <span class="citation">(orq.ai)</span></li>
             <li><strong>Dynamic Parallel Execution  paralelogram:</strong> For multiple documents, spin up parallel subgraphs, then merge outputs in final "Aggregator" node for faster throughput.</li>
+        </ul>
+        <h4 class="font-bold mt-4 mb-3 text-lg tool-title">CrewAI</h4>
+        <p class="text-sm text-gray-600 mb-1">Key Features (2025):</p>
+        <ul class="list-disc list-inside space-y-2 text-sm md:text-base pl-4 pb-3">
+            <li><strong>Crew-Based Multi-Agent Framework:</strong> Define Agents and Tasks in YAML, execute collaboratively via Crew Manager.</li>
+            <li><strong>Dashboard & Telemetry:</strong> Visualize agent timelines and token usage in real time.</li>
+        </ul>
+        <h5 class="font-semibold mt-2 mb-1 text-base prompt-eng-title">Prompt-Engineering Best Practices (CrewAI):</h5>
+        <ul class="list-disc list-inside space-y-1 text-sm md:text-base pl-4 pb-3">
+            <li><strong>Single Responsibility Agents:</strong> Keep each agent focused (e.g., ResearchAgent, WriteAgent) for easier debugging.</li>
+            <li><strong>Centralized Crew State:</strong> Share JSON-serializable state across agents and persist checkpoints after critical steps.</li>
         </ul>
     </div>
     
@@ -1090,17 +1131,17 @@
                 contentId: 'modal-tech-frameworks-content',
                 bgColor: PALETTE.red
             },
-            { 
-                label: 'Vector DBs (Pinecone, Chroma)', 
-                subtitle: 'High-performance embedding stores for retrieval tasks (RAG, semantic search).',
+            {
+                label: 'Vector DBs (Pinecone, Chroma, Weaviate, Milvus, Qdrant)',
+                subtitle: 'Embedding stores optimized for similarity search, RAG, and AI-native applications.',
                 contentId: 'modal-tech-vector-dbs-content',
                 bgColor: PALETTE.darkBlue
             },
-            { 
-                label: 'Orchestration (LangChain, LangGraph)', 
+            {
+                label: 'Orchestration (LangChain, LangGraph, CrewAI)',
                 subtitle: 'Building modular, multi-agent GenAI workflows and pipelines.',
                 contentId: 'modal-tech-orchestration-content',
-                bgColor: '#EF476F' // A slightly different red for variety if needed, or use PALETTE.red
+                bgColor: '#EF476F'
             }
         ];
 
