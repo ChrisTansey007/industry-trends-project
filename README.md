@@ -41,3 +41,20 @@ curl http://localhost:3000
 ```
 
 You should see the HTML for the React application, including the title `Industry Trends React App`.
+
+## Running Tests
+
+Run the React test suite after installing dependencies:
+
+```bash
+npm test --prefix client
+```
+
+You can also run it from within the `client` directory:
+
+```bash
+cd client
+npm test
+```
+
+This ensures that `react-scripts` from the client dependencies is available when executing the tests.
