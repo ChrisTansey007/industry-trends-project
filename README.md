@@ -1,28 +1,30 @@
-# Industry Trends Project
+# Industry Trends Project (React)
 
-This project is a simple static site that highlights modern generative AI engineering trends. The HTML, CSS, and JavaScript files live in the repository root.
+This project is now a React application served by a small Express server. The React app lives in the `client` folder and is built with Create React App.
 
 ## Running Locally
 
 1. Install Node.js (v18+ recommended).
-2. Install dependencies:
+2. Install dependencies for both server and client:
    ```bash
    npm install
+   cd client && npm install
    ```
-3. Start the development server:
+3. Build the React app and start the server:
    ```bash
+   npm run build --prefix client
    npm start
    ```
 4. Open your browser to [http://localhost:3000](http://localhost:3000) to view the site.
 
-The server serves the files in the repository root, so `index.html` will be the entry page.
+The Express server serves the production build from `client/build`.
 
 ## Verifying the Server
 
-After running `npm start`, you can confirm the server is serving the site by visiting `http://localhost:3000` in your browser or using `curl`:
+After running `npm start`, you can confirm the server is serving the app by visiting `http://localhost:3000` or using `curl`:
 
 ```bash
 curl http://localhost:3000
 ```
 
-You should see the HTML for the home page, including the title `Industry Trends: The Modern Generative AI Engineer`.
+You should see the HTML for the React application, including the title `Industry Trends React App`.
