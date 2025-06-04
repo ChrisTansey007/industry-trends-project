@@ -24,3 +24,10 @@ body { font-family: 'Inter', sans-serif; background-color: #f8fafc; /* Light gra
 .tool-title { color: #073B4C; font-weight: 600; }
 .citation { font-size: 0.75rem; color: #6b7280; font-style: italic; }
 /* Additional CSS rules from the style block, ensuring all is included */
+/* RAG infographic styles */
+.rag-infographic { width: 320px; height: 320px; position: relative; }
+.rag-ring { position: absolute; border-radius: 50%; border: 2px solid; }
+.outer-ring { width: 320px; height: 320px; border-color: #073B4C; top: 0; left: 0; }
+.middle-ring { width: 220px; height: 220px; border-color: #06D6A0; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.inner-ring { width: 120px; height: 120px; border-color: #118AB2; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.rag-icon { position: absolute; padding: 0.25rem 0.5rem; border-radius: 9999px; color: #fff; font-size: 0.75rem; cursor: pointer; }
