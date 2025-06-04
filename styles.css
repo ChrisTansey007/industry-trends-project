@@ -1,0 +1,120 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc; /* Light gray background */
+}
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Max width for charts */
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px; /* Base height */
+    max-height: 400px; /* Max height */
+}
+#techStackBarChartCanvas {
+    cursor: pointer;
+}
+@media (min-width: 768px) {
+    .chart-container {
+        height: 350px;
+    }
+}
+.gradient-text {
+    background: linear-gradient(to right, #118AB2, #06D6A0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.flow-step {
+    position: relative;
+    padding-right: 2.5rem;
+}
+.flow-step:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #FFD166;
+}
+@media (max-width: 767px) {
+    .flow-step {
+        padding-right: 0;
+        padding-bottom: 2.5rem;
+    }
+    .flow-step:not(:last-child)::after {
+        content: '↓';
+        right: 50%;
+        top: auto;
+        bottom: 0.5rem;
+        transform: translateX(50%);
+    }
+}
+.modal-trigger-card {
+    cursor: pointer;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+.modal-trigger-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+/* Modal Styles */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 40;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.modal-backdrop.open {
+    opacity: 1;
+}
+.modal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    z-index: 50;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.modal-container.open {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+.modal-content-area {
+    max-height: calc(90vh - 120px);
+    overflow-y: auto;
+}
+/* Custom scrollbar for modal content */
+.modal-content-area::-webkit-scrollbar {
+    width: 8px;
+}
+.modal-content-area::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+.modal-content-area::-webkit-scrollbar-thumb {
+    background: #c5c5c5;
+    border-radius: 10px;
+}
+.modal-content-area::-webkit-scrollbar-thumb:hover {
+    background: #a0a0a0;
+}
+.provider-title-aws { color: #FF9900; font-weight: 600; }
+.provider-title-azure { color: #0078D4; font-weight: 600; }
+.provider-title-gcp { color: #4285F4; font-weight: 600; }
+.prompt-eng-title { color: #06D6A0; font-weight: 600; }
+.tool-title { color: #073B4C; font-weight: 600; }
+.citation {
+    font-size: 0.75rem;
+    color: #6b7280;
+    font-style: italic;
+}
