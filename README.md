@@ -1,6 +1,6 @@
 # Industry Trends Project (React)
 
-This project is now a React application served by a small Express server. The React app lives in the `client` folder and is built with Create React App.
+This project is a React application served by a small Express server. The React app lives in the `client` folder and is built with Create React App. Legacy HTML, CSS, and JavaScript files have been removed.
 
 ## Running Locally
 
