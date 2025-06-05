@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Modal from './Modal';
+import colors from '../constants/colors';
 
 function RAGPipelines() {
   const [modal, setModal] = useState(null);
@@ -8,7 +9,7 @@ function RAGPipelines() {
     {
       label: 'Document Ingestion',
       pos: { top: '5%', left: '45%' },
-      color: '#FF6B6B',
+      color: colors.coral,
       content: (
         <ul className="list-disc list-inside space-y-1 text-sm">
           <li>Convert PDFs, databases, or feeds to embeddings.</li>
@@ -19,7 +20,7 @@ function RAGPipelines() {
     {
       label: 'Vector Index',
       pos: { top: '40%', left: '75%' },
-      color: '#06D6A0',
+      color: colors.green,
       content: (
         <ul className="list-disc list-inside space-y-1 text-sm">
           <li>Managed stores like Pinecone or Matching Engine.</li>
@@ -30,7 +31,7 @@ function RAGPipelines() {
     {
       label: 'Retrieval Prompt',
       pos: { top: '80%', left: '45%' },
-      color: '#FFD166',
+      color: colors.yellow,
       content: (
         <ul className="list-disc list-inside space-y-1 text-sm">
           <li>Embed retrieved docs into the prompt.</li>
@@ -41,7 +42,7 @@ function RAGPipelines() {
     {
       label: 'LLM Generation',
       pos: { top: '40%', left: '15%' },
-      color: '#118AB2',
+      color: colors.blue,
       content: (
         <ul className="list-disc list-inside space-y-1 text-sm">
           <li>Models like GPT-4 or Claude produce the final answer.</li>
@@ -52,7 +53,7 @@ function RAGPipelines() {
     {
       label: 'Low-Code Apps',
       pos: { top: '10%', left: '10%' },
-      color: '#073B4C',
+      color: colors.darkBlue,
       content: (
         <ul className="list-disc list-inside space-y-1 text-sm">
           <li>Tools like SageMaker Canvas or Power Apps.</li>
@@ -63,7 +64,7 @@ function RAGPipelines() {
     {
       label: 'Orchestration',
       pos: { top: '10%', left: '75%' },
-      color: '#EF476F',
+      color: colors.magenta,
       content: (
         <ul className="list-disc list-inside space-y-1 text-sm">
           <li>Frameworks such as LangChain or CrewAI.</li>
@@ -74,7 +75,7 @@ function RAGPipelines() {
     {
       label: 'Monitoring',
       pos: { top: '85%', left: '10%' },
-      color: '#8d99ae',
+      color: colors.gray,
       content: (
         <ul className="list-disc list-inside space-y-1 text-sm">
           <li>Prometheus and Grafana track latency.</li>
@@ -85,7 +86,7 @@ function RAGPipelines() {
     {
       label: 'Security',
       pos: { top: '85%', left: '75%' },
-      color: '#22223b',
+      color: colors.darkGray,
       content: (
         <ul className="list-disc list-inside space-y-1 text-sm">
           <li>IAM roles and network policies enforce least privilege.</li>
@@ -98,10 +99,10 @@ function RAGPipelines() {
   return (
     <section id="rag-pipelines" className="my-16">
       <h2 className="text-3xl font-bold text-center mb-2">Retrieval-First Prompts &amp; Document Q&amp;A Pipelines</h2>
-      <p className="text-center max-w-3xl mx-auto text-[#118AB2] mb-8">
+      <p className="text-center max-w-3xl mx-auto mb-8" style={{color: colors.blue}}>
         Retrieval-Augmented Generation combines vector search with LLMs to keep responses accurate and up to date.
       </p>
-      <ol className="list-decimal list-inside space-y-2 text-left max-w-xl mx-auto text-[#073B4C] mb-10">
+      <ol className="list-decimal list-inside space-y-2 text-left max-w-xl mx-auto mb-10" style={{color: colors.darkBlue}}>
         <li><strong>Ingest &amp; Embed Documents:</strong> convert your corpus to embeddings and store them in a vector index.</li>
         <li><strong>Retrieve:</strong> query the index to fetch top-k relevant documents.</li>
         <li><strong>Construct Retrieval-First Prompt:</strong> prepend the retrieved context to the user question.</li>

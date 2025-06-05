@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { Chart, BarElement, CategoryScale, LinearScale, Tooltip, Legend } from 'chart.js';
 import Modal from './Modal';
+import colors from '../constants/colors';
 
 Chart.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
@@ -299,32 +300,32 @@ function OrchestrationContent() {
 const categories = [
   {
     label: 'Cloud Platforms (AWS, GCP, Azure)',
-    color: '#118AB2',
+    color: colors.blue,
     content: <CloudPlatformsContent />
   },
   {
     label: 'LLMs (OpenAI, Claude, Mistral)',
-    color: '#06D6A0',
+    color: colors.green,
     content: <LLMsContent />
   },
   {
     label: 'Deployment (Docker, Kubernetes, CI/CD)',
-    color: '#FFD166',
+    color: colors.yellow,
     content: <DeploymentContent />
   },
   {
     label: 'Frameworks (PyTorch, TensorFlow)',
-    color: '#FF6B6B',
+    color: colors.coral,
     content: <FrameworksContent />
   },
   {
     label: 'Vector DBs (Pinecone, Chroma, Weaviate, Milvus, Qdrant)',
-    color: '#073B4C',
+    color: colors.darkBlue,
     content: <VectorDBsContent />
   },
   {
     label: 'Orchestration (LangChain, LangGraph, CrewAI)',
-    color: '#EF476F',
+    color: colors.magenta,
     content: <OrchestrationContent />
   }
 ];
@@ -371,8 +372,8 @@ function TechStack() {
   return (
     <section id="tech-stack-interactive" className="my-16">
       <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
-        <h2 className="text-3xl font-bold text-center mb-2 text-[#073B4C]">The Essential Tech Stack for Full-Stack GenAI</h2>
-        <p className="text-center max-w-3xl mx-auto text-[#118AB2] mb-8">
+        <h2 className="text-3xl font-bold text-center mb-2" style={{color: colors.darkBlue}}>The Essential Tech Stack for Full-Stack GenAI</h2>
+        <p className="text-center max-w-3xl mx-auto mb-8" style={{color: colors.blue}}>
           Fluency in foundational frameworks, powerful LLMs, and robust cloud platforms is non-negotiable in 2025. Click on a bar below to explore details.
         </p>
         <div className="chart-container h-96 md:h-[500px]">
