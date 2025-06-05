@@ -1,6 +1,8 @@
-# Modularization Plan for industry-trends.html
+# Legacy Modularization Plan for industry-trends.html (obsolete)
 
 ## Introduction
+ 
+**Note:** The project has migrated to a React-based architecture as described in `README.md`. This legacy plan for `industry-trends.html` is retained for historical reference only. React components now handle modularization.
 This document outlines a detailed modularization plan for the `industry-trends.html` file. The goal is to break down the monolithic HTML file into a component-based structure, improving maintainability, scalability, and reusability. The plan includes a component breakdown, suggested file structure, handling of dependencies, and recommendations for implementation.
 
 ## Component Breakdown
@@ -120,4 +122,4 @@ To modularize the project, follow these steps iteratively:
 5. **Optimize**: After basic functionality is confirmed, consider optimizations like minifying CSS/JS files or using a bundler (e.g., Webpack) for production deployment. However, start with a simple setup to keep the project accessible.
 
 ## Conclusion
-This modularization plan transforms the monolithic `industry-trends.html` into a scalable, maintainable system. By separating concerns into distinct components and files, the plan prepares the project for future growth and easier updates. If you approve this plan, the next step is to switch to a different mode for implementation.
+This plan was created for a now-deprecated single HTML file. The project has since moved to a React architecture where modularization is handled via React components located in the `client` directory.
