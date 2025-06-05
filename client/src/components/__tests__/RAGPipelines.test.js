@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import RAGPipelines from './RAGPipelines';
+import RAGPipelines from '../RAGPipelines';
 
 test('renders RAG section heading', () => {
   render(<RAGPipelines />);
