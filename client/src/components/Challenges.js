@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import colors from '../constants/colors';
 
 function ChallengeCard({ title, subtitle, color, sections }) {
   const [open, setOpen] = useState(false);
@@ -31,7 +32,7 @@ const challenges = [
   {
     title: 'Latency',
     subtitle: 'Optimizing models and infrastructure for real-time response.',
-    color: '#FF6B6B',
+    color: colors.coral,
     sections: {
       AWS: [
         'Bedrock latency-optimized inference cuts response times up to 50%.',
@@ -54,7 +55,7 @@ const challenges = [
   {
     title: 'Hallucination',
     subtitle: 'Implementing RAG and fine-tuning to ensure factual accuracy.',
-    color: '#FFD166',
+    color: colors.yellow,
     sections: {
       AWS: [
         'Bedrock Agents route uncertain answers to knowledge bases.',
@@ -77,7 +78,7 @@ const challenges = [
   {
     title: 'Cost Management',
     subtitle: 'Balancing performance with token usage and computational expense.',
-    color: '#06D6A0',
+    color: colors.green,
     sections: {
       AWS: [
         'Spot or Reserved Instances cut training costs up to 70%.',
@@ -101,7 +102,7 @@ const challenges = [
   {
     title: 'Scalability',
     subtitle: 'Building robust CI/CD pipelines for models serving millions of users.',
-    color: '#118AB2',
+    color: colors.blue,
     sections: {
       AWS: [
         'Multi-Model Endpoints host many models behind one endpoint.',
@@ -129,7 +130,7 @@ function Challenges() {
   return (
     <section id="challenges" className="my-16">
       <h2 className="text-3xl font-bold text-center mb-2">Solving the Toughest Challenges in Full-Stack GenAI</h2>
-      <p className="text-center max-w-3xl mx-auto text-[#118AB2] mb-8">
+      <p className="text-center max-w-3xl mx-auto mb-8" style={{color: colors.blue}}>
         Cloud providers and prompt engineers must collaborate to overcome latency, hallucination, cost, and scalability hurdles.
       </p>
       <div className="space-y-4">
