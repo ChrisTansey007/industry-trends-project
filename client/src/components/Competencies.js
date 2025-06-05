@@ -19,8 +19,15 @@ function Competencies() {
 
   return (
     <section id="competencies" className="my-16">
-      <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
+      <div className="card rounded-xl shadow-lg p-6 md:p-8">
         <h2 className="text-3xl font-bold text-center mb-2">Core Competency Breakdown</h2>
+        <div className="mb-4 text-sm" style={{color: colors.blue}}>
+          <h3 className="font-semibold mb-1">What you'll learn</h3>
+          <ul className="list-disc list-inside">
+            <li>Key skill categories</li>
+            <li>Importance of process and business knowledge</li>
+          </ul>
+        </div>
         <p className="text-center max-w-2xl mx-auto mb-8" style={{color: colors.blue}}>
           Successful candidates are not just coders; they are multifaceted problem-solvers. The ideal profile is a blend of deep technical knowledge, process maturity, and strong business acumen.
         </p>

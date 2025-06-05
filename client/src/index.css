@@ -1,4 +1,5 @@
-body { font-family: 'Inter', sans-serif; background-color: #f8fafc; /* Light gray background */ }
+body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+body.dark { background-color: #1a202c; color: #f8fafc; }
 .chart-container { position: relative; width: 100%; max-width: 600px; margin-left: auto; margin-right: auto; height: 300px; max-height: 400px; }
 #techStackBarChartCanvas { cursor: pointer; }
 @media (min-width: 768px) { .chart-container { height: 350px; } }
@@ -31,3 +32,16 @@ body { font-family: 'Inter', sans-serif; background-color: #f8fafc; /* Light gra
 .middle-ring { width: 220px; height: 220px; border-color: #06D6A0; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 .inner-ring { width: 120px; height: 120px; border-color: #118AB2; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 .rag-icon { position: absolute; padding: 0.25rem 0.5rem; border-radius: 9999px; color: #fff; font-size: 0.75rem; cursor: pointer; }
+
+/* Flip card styles */
+.flip-card { perspective: 1000px; }
+.flip-card-inner { position: relative; width: 100%; transition: transform 0.6s; transform-style: preserve-3d; }
+.flip-card-inner.flipped { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back { backface-visibility: hidden; width: 100%; height: 100%; position: absolute; top: 0; left: 0; }
+.flip-card-back { transform: rotateY(180deg); }
+
+/* Dark mode helpers */
+.dark-card { background-color: #ffffff; }
+body.dark .dark-card { background-color: #2d3748; color: #f8fafc; }
+.card { background-color: #ffffff; }
+body.dark .card { background-color: #2d3748; color: #f8fafc; }
