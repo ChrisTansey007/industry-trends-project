@@ -21,8 +21,9 @@ To achieve modularity, the project should adopt a component-based file structure
 ```
 industry-trends-project/
 ├── index.html
-├── css/
-│   └── main.css
+├── client/
+│   └── src/
+│       └── index.css
 ├── js/
 │   ├── main.js
 │   ├── charts/
@@ -97,7 +98,7 @@ The current dependencies include external libraries like Chart.js and Tailwind C
 
 1. **Chart.js**: This library is used for rendering charts in the Core Competency and Essential Tech Stack components. To avoid duplication, include it via CDN in `index.html`. Each chart module (e.g., `competency-chart.js` and `tech-stack-chart.js`) should reference Chart.js directly. This ensures that the library is loaded once globally.
 
-2. **Tailwind CSS**: Used for styling. Keep it in `index.html` via CDN for global styles. Move any custom CSS from the original `styles.css` to `main.css` to reduce redundancy and improve maintainability. Use Tailwind classes for responsive design where possible.
+2. **Tailwind CSS**: Used for styling. Keep it in `index.html` via CDN for global styles. Move any custom CSS from the original `styles.css` into `client/src/index.css` to reduce redundancy and improve maintainability. Use Tailwind classes for responsive design where possible.
 
 3. **Modal System**: To prevent code duplication, create a reusable modal system in `modal-base.js`. This file should handle the opening, closing, and content loading of modals based on data attributes (e.g., `data-modal-target`). Specific modal files (e.g., `latency-modal.js`) can extend this base functionality with their unique content and behavior.
 
@@ -113,7 +114,7 @@ To modularize the project, follow these steps iteratively:
    - Extract JavaScript into modules, focusing on the modal and chart functionalities first to ensure core interactions work.
    - Update `main.js` to bootstrap the application, loading components dynamically (e.g., using vanilla JavaScript fetch or import maps).
 
-3. **Update CSS**: Consolidate all custom CSS from the original file into `main.css`. Organize it by component for clarity. Use Tailwind CSS for any responsive utilities to minimize custom CSS.
+3. **Update CSS**: Consolidate all custom CSS from the original file into `client/src/index.css`. Organize it by component for clarity. Use Tailwind CSS for any responsive utilities to minimize custom CSS.
 
 4. **Test and Debug**: Run the application and test each component for functionality. Ensure charts render correctly, modals open and close as expected, and the layout is responsive. Fix any issues with interactivity or styling.
 
