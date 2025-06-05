@@ -3,7 +3,7 @@ import Modal from './Modal';
 import colors from '../constants/colors';
 
 function RAGPipelines() {
-  const [modal, setModal] = useState(null);
+  const [modalIdx, setModalIdx] = useState(null);
 
   const items = [
     {
@@ -99,6 +99,14 @@ function RAGPipelines() {
   return (
     <section id="rag-pipelines" className="my-16">
       <h2 className="text-3xl font-bold text-center mb-2">Retrieval-First Prompts &amp; Document Q&amp;A Pipelines</h2>
+      <div className="mb-4 text-sm" style={{color: colors.blue}}>
+        <h3 className="font-semibold mb-1">What you'll learn</h3>
+        <ul className="list-disc list-inside">
+          <li>Steps to build a RAG workflow</li>
+          <li>Where vector stores fit</li>
+          <li>How orchestration ties everything together</li>
+        </ul>
+      </div>
       <p className="text-center max-w-3xl mx-auto mb-8" style={{color: colors.blue}}>
         Retrieval-Augmented Generation combines vector search with LLMs to keep responses accurate and up to date.
       </p>
@@ -117,16 +125,22 @@ function RAGPipelines() {
             key={idx}
             className="rag-icon"
             style={{ top: it.pos.top, left: it.pos.left, backgroundColor: it.color }}
-            onClick={() => setModal(it)}
+            onClick={() => setModalIdx(idx)}
             aria-label={it.label}
           >
             {it.label.split(' ')[0]}
           </button>
         ))}
       </div>
-      {modal && (
-        <Modal title={modal.label} headerColor={modal.color} onClose={() => setModal(null)}>
-          {modal.content}
+      {modalIdx !== null && (
+        <Modal
+          title={items[modalIdx].label}
+          headerColor={items[modalIdx].color}
+          onClose={() => setModalIdx(null)}
+          onPrev={modalIdx > 0 ? () => setModalIdx(modalIdx - 1) : null}
+          onNext={modalIdx < items.length - 1 ? () => setModalIdx(modalIdx + 1) : null}
+        >
+          {items[modalIdx].content}
         </Modal>
       )}
     </section>

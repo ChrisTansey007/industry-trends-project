@@ -5,13 +5,13 @@ function ChallengeCard({ title, subtitle, color, sections }) {
   const [open, setOpen] = useState(false);
   const headerStyle = { backgroundColor: color };
   return (
-    <div className="mb-4 border rounded-lg shadow" onClick={() => setOpen(!open)}>
-      <div className="p-4 cursor-pointer" style={headerStyle}>
-        <h3 className="text-xl font-bold text-white">{title}</h3>
-        <p className="text-sm text-white opacity-90">{subtitle}</p>
-      </div>
-      {open && (
-        <div className="p-4 bg-white space-y-4 text-gray-700">
+    <div className="flip-card mb-4" onClick={() => setOpen(!open)}>
+      <div className={`flip-card-inner border rounded-lg shadow ${open ? 'flipped' : ''}`}>
+        <div className="flip-card-front p-4" style={headerStyle}>
+          <h3 className="text-xl font-bold text-white">{title}</h3>
+          <p className="text-sm text-white opacity-90">{subtitle}</p>
+        </div>
+        <div className="flip-card-back p-4 dark-card space-y-4 text-gray-700">
           {Object.entries(sections).map(([label, items]) => (
             <div key={label}>
               <h4 className="font-semibold">{label}</h4>
@@ -23,7 +23,7 @@ function ChallengeCard({ title, subtitle, color, sections }) {
             </div>
           ))}
         </div>
-      )}
+      </div>
     </div>
   );
 }
@@ -130,6 +130,14 @@ function Challenges() {
   return (
     <section id="challenges" className="my-16">
       <h2 className="text-3xl font-bold text-center mb-2">Solving the Toughest Challenges in Full-Stack GenAI</h2>
+      <div className="mb-4 text-sm" style={{color: colors.blue}}>
+        <h3 className="font-semibold mb-1">What you'll learn</h3>
+        <ul className="list-disc list-inside">
+          <li>Common pain points in production</li>
+          <li>Strategies to reduce latency and hallucination</li>
+          <li>How to manage cost at scale</li>
+        </ul>
+      </div>
       <p className="text-center max-w-3xl mx-auto mb-8" style={{color: colors.blue}}>
         Cloud providers and prompt engineers must collaborate to overcome latency, hallucination, cost, and scalability hurdles.
       </p>

@@ -331,7 +331,7 @@ const categories = [
 ];
 
 function TechStack() {
-  const [selected, setSelected] = useState(null);
+  const [selectedIdx, setSelectedIdx] = useState(null);
 
   const data = {
     labels: categories.map(c => c.label),
@@ -352,7 +352,7 @@ function TechStack() {
     onClick: (e, elements) => {
       if (elements.length > 0) {
         const idx = elements[0].index;
-        setSelected(categories[idx]);
+        setSelectedIdx(idx);
       }
     },
     plugins: {
@@ -371,8 +371,16 @@ function TechStack() {
 
   return (
     <section id="tech-stack-interactive" className="my-16">
-      <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
+      <div className="card rounded-xl shadow-lg p-6 md:p-8">
         <h2 className="text-3xl font-bold text-center mb-2" style={{color: colors.darkBlue}}>The Essential Tech Stack for Full-Stack GenAI</h2>
+        <div className="mb-4 text-sm" style={{color: colors.blue}}>
+          <h3 className="font-semibold mb-1">What you'll learn</h3>
+          <ul className="list-disc list-inside">
+            <li>Popular platforms and frameworks</li>
+            <li>How to orchestrate GenAI pipelines</li>
+            <li>Where to focus your learning</li>
+          </ul>
+        </div>
         <p className="text-center max-w-3xl mx-auto mb-8" style={{color: colors.blue}}>
           Fluency in foundational frameworks, powerful LLMs, and robust cloud platforms is non-negotiable in 2025. Click on a bar below to explore details.
         </p>
@@ -380,9 +388,15 @@ function TechStack() {
           <Bar data={data} options={options} />
         </div>
       </div>
-      {selected && (
-        <Modal title={selected.label} headerColor={selected.color} onClose={() => setSelected(null)}>
-          {selected.content}
+      {selectedIdx !== null && (
+        <Modal
+          title={categories[selectedIdx].label}
+          headerColor={categories[selectedIdx].color}
+          onClose={() => setSelectedIdx(null)}
+          onPrev={selectedIdx > 0 ? () => setSelectedIdx(selectedIdx - 1) : null}
+          onNext={selectedIdx < categories.length - 1 ? () => setSelectedIdx(selectedIdx + 1) : null}
+        >
+          {categories[selectedIdx].content}
         </Modal>
       )}
     </section>
